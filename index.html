@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Tamarac Dentist | Tamarac, FL</title>
+<meta name="description" content="Odontología general y estética en Tamarac, FL con la Dra. Flor Luzardo y su equipo. En inglés y español." data-t-content="meta">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#07163F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%230C2A73'/%3E%3Ctext x='32' y='43' font-size='32' font-family='Arial,sans-serif' font-weight='700' text-anchor='middle' fill='%23EECC7C'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0C2A73; --navy-d:#07163F; --navy-dd:#050F2B;
+  --teal:#7BCDC5; --teal-l:#DDF3F0; --teal-d:#0C6E73;
+  --sun:#EECC7C; --sun-l:#FFF4D6; --sun-d:#7A5400;
+  --paper:#F3F8FB; --white:#fff; --ink:#0B1B3F; --dim:#3D4A72; --line:rgba(12,42,115,.14);
+  --ease:cubic-bezier(.23,1,.32,1); --ease-io:cubic-bezier(.77,0,.175,1);
+  --gutter:clamp(16px,4vw,48px); --edge:max(var(--gutter),calc((100vw - 1180px)/2));
+  --r-card:28px; --r-tile:20px; --r-field:14px;
+  --display:"Lexend",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:104px;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg,iframe{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;text-wrap:balance;font-weight:700}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:8px}
+.on-light :focus-visible,.light :focus-visible{outline-color:var(--navy)}
+.skip{position:fixed;top:-80px;left:12px;z-index:200;background:var(--sun);color:var(--navy-d);padding:.7rem 1.1rem;border-radius:999px;font-weight:700}
+.skip:focus{top:12px}
+.wrap{width:min(1180px,100% - var(--gutter)*2);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+svg.ic{width:1.25em;height:1.25em;flex:none;fill:currentColor}
+
+/* ---------- splash ---------- */
+#splash{position:fixed;inset:0;z-index:300;display:grid;place-items:center;background:radial-gradient(70% 70% at 50% 40%,#12358f 0%,var(--navy-d) 70%);transition:opacity .5s var(--ease),visibility .5s}
+#splash.hide{opacity:0;visibility:hidden}
+#splash img{width:min(240px,56vw);animation:splashIn .7s var(--ease) both}
+@keyframes splashIn{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:12px;left:0;right:0;z-index:100;pointer-events:none}
+.nav-in{pointer-events:auto;width:min(1180px,100% - var(--gutter)*2);margin-inline:auto;display:flex;align-items:center;gap:14px;padding:6px 8px 6px 18px;border-radius:999px;background:rgba(7,22,63,.58);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.14);transition:background .3s,box-shadow .3s}
+.nav.scrolled .nav-in{background:rgba(7,22,63,.94);box-shadow:0 14px 40px -18px rgba(5,15,43,.7)}
+.brand{display:flex;align-items:center;flex:none}
+.brand img{height:60px;width:auto;object-fit:contain}
+.links{display:none;margin-left:auto;gap:2px}
+.links a{color:#fff;font-weight:600;font-size:.95rem;padding:.55rem .9rem;border-radius:999px;transition:background .2s,color .2s}
+.nav-end{display:flex;align-items:center;gap:10px;margin-left:auto}
+.open-chip{display:none;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:#fff;padding:.45rem .8rem;border-radius:999px;background:rgba(255,255,255,.1);white-space:nowrap}
+.open-chip i{width:9px;height:9px;border-radius:50%;background:#7AE2A1;flex:none}
+.open-chip.closed i{background:#FFB5A8}
+.lang{display:flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.14)}
+.lang button{min-width:44px;min-height:40px;padding:0 .7rem;border-radius:999px;color:#fff;font-weight:700;font-size:.85rem;letter-spacing:.04em;transition:background .25s var(--ease),color .25s}
+.lang button[aria-pressed=true]{background:var(--sun);color:var(--navy-d)}
+.burger{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.14)}
+.burger svg{width:22px;height:22px}
+.menu{display:none;pointer-events:auto;width:min(1180px,100% - var(--gutter)*2);margin:8px auto 0;padding:10px;border-radius:var(--r-card);background:rgba(7,22,63,.96);border:1px solid rgba(255,255,255,.14)}
+.menu.open{display:grid}
+.menu a{color:#fff;font-weight:600;padding:.9rem 1rem;border-radius:16px;min-height:48px;display:flex;align-items:center}
+.menu a:active{background:rgba(255,255,255,.1)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:52px;padding:.85rem 1.6rem;border-radius:999px;font-family:var(--display);font-weight:600;font-size:1rem;white-space:nowrap;transition:transform .2s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s;will-change:transform}
+.btn:active{transform:scale(.97)!important}
+.btn-sun{background:var(--sun);color:var(--navy-d);box-shadow:0 12px 28px -14px rgba(238,204,124,.9)}
+.btn-ghost{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:0 14px 30px -16px rgba(12,42,115,.8)}
+.btn-sm{min-height:44px;padding:.55rem 1.15rem;font-size:.92rem}
+@media (hover:hover) and (pointer:fine){
+  .btn-sun:hover{box-shadow:0 18px 34px -12px rgba(238,204,124,1);transform:translateY(-2px)}
+  .btn-ghost:hover{background:#fff;color:var(--navy-d)}
+  .btn-navy:hover{transform:translateY(-2px);background:#0f3590}
+  .links a:hover{background:rgba(255,255,255,.14)}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;padding:7rem 0 8.5rem;background:linear-gradient(160deg,var(--navy-dd) 0%,var(--navy-d) 38%,#0f3a9c 100%)}
+.mesh{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.mesh::before,.mesh::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.55}
+.mesh::before{width:46vw;height:46vw;min-width:320px;left:-12vw;top:-10vw;background:var(--teal);opacity:.34;animation:drift 22s ease-in-out infinite}
+.mesh::after{width:40vw;height:40vw;min-width:280px;right:-8vw;bottom:-14vw;background:var(--sun);opacity:.38;animation:drift 28s ease-in-out infinite reverse}
+@keyframes drift{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(5%,4%,0) scale(1.14)}}
+.hero-grid{display:grid;gap:1.5rem;align-items:center}
+.hero h1{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:800}
+.hero h1 span{display:block;color:var(--sun)}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.2rem);color:#E3EAFB;max-width:34ch;margin-top:1.1rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.hero-art{position:relative;justify-self:center;width:min(100%,520px);aspect-ratio:1/1.05;display:flex;align-items:flex-end;justify-content:center}
+.blob{position:absolute;inset:6% 4% 0;border-radius:50% 50% 44% 56% / 56% 46% 54% 44%;background:linear-gradient(145deg,var(--teal) 0%,#5bb8c4 48%,var(--sun) 130%);animation:blob 14s ease-in-out infinite}
+@keyframes blob{0%,100%{border-radius:50% 50% 44% 56% / 56% 46% 54% 44%}50%{border-radius:44% 56% 52% 48% / 46% 56% 44% 54%}}
+.hero-art img.doc{position:relative;height:100%;width:auto;max-width:96%;object-fit:contain;object-position:bottom;-webkit-mask-image:linear-gradient(#000 82%,transparent 100%);mask-image:linear-gradient(#000 82%,transparent 100%);transition:transform .5s var(--ease)}
+.smile{position:absolute;left:4%;bottom:10%;width:34%;color:var(--sun);z-index:2}
+.smile path{stroke-dasharray:240;stroke-dashoffset:240;animation:draw 1.2s .9s var(--ease-io) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.wave{position:absolute;left:0;right:0;bottom:-1px;line-height:0;color:var(--white)}
+.wave svg{width:100%;height:clamp(40px,6vw,90px)}
+.enter{opacity:0;transform:translateY(22px);animation:enter .8s var(--ease) forwards;animation-delay:calc(var(--d,0)*90ms + 250ms)}
+@keyframes enter{to{opacity:1;transform:none}}
+
+/* ---------- stats ---------- */
+.stats{position:relative;z-index:2;margin-top:-5.2rem;padding-bottom:1.5rem;background:linear-gradient(180deg,transparent 0 5.2rem,#fff 5.2rem)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{padding:1.3rem 1.2rem;border-radius:var(--r-tile);background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border:1px solid #fff;box-shadow:0 22px 50px -28px rgba(7,22,63,.55);transition:transform .3s var(--ease)}
+.stat b{display:block;font-family:var(--display);font-size:clamp(1.9rem,4.4vw,2.8rem);line-height:1;color:var(--navy);font-weight:800}
+.stat span{display:block;margin-top:.45rem;font-size:.95rem;color:var(--dim);font-weight:500}
+.stat .stars{display:flex;gap:2px;margin-top:.55rem;color:#C99A2E}
+.stat .stars svg{width:16px;height:16px}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.sec{padding:clamp(4.5rem,9vw,7.5rem) 0}
+.bg-white{background:#fff}.bg-paper{background:var(--paper)}
+.bg-teal-l{background:linear-gradient(180deg,var(--teal-l) 0%,#eefaf8 100%)}
+.bg-navy{background:linear-gradient(170deg,var(--navy-d),var(--navy) 120%);color:#fff}
+.bg-sun{background:var(--sun-l)}
+.bg-teal{background:var(--teal)}
+.kicker{display:inline-block;font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-d);margin-bottom:.8rem}
+.bg-navy .kicker{color:var(--teal)}
+h2.title{font-size:clamp(1.9rem,4.6vw,3.2rem);max-width:18ch}
+.sub{margin-top:1rem;color:var(--dim);max-width:52ch;font-size:1.08rem}
+.bg-navy .sub{color:#CFDAF5}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0)*70ms)}
+.reveal.in{opacity:1;transform:none}
+
+/* services bento */
+.svc-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:2.6rem}
+.svc{position:relative;display:flex;flex-direction:column;gap:.7rem;padding:1.5rem;border-radius:var(--r-tile);background:#fff;border:1px solid var(--line);box-shadow:0 12px 30px -24px rgba(7,22,63,.5);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;transform-style:preserve-3d}
+.svc .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--teal-l);color:var(--navy);transition:background .3s,color .3s,transform .3s var(--ease)}
+.svc .ico svg{width:28px;height:28px}
+.svc h3{font-size:1.18rem;letter-spacing:-.01em}
+.svc p{color:var(--dim);font-size:.98rem}
+.svc.big{background:linear-gradient(150deg,var(--navy) 0%,#164bb5 100%);color:#fff;border-color:transparent;min-height:210px;justify-content:flex-end}
+.svc.big p{color:#D9E3FA}
+.svc.big .ico{background:rgba(255,255,255,.16);color:var(--sun)}
+.svc.sun{background:var(--sun);border-color:transparent;justify-content:flex-end}
+.svc.sun .ico{background:rgba(7,22,63,.1);color:var(--navy-d)}
+.svc.sun p{color:#3b2c00}
+.svc.sun a{font-family:var(--display);font-weight:700;color:var(--navy-d);text-decoration:underline;text-underline-offset:4px}
+@media (hover:hover) and (pointer:fine){
+  .svc:hover{transform:translateY(-6px);box-shadow:0 26px 44px -22px rgba(7,22,63,.55);border-color:var(--teal)}
+  .svc:hover .ico{background:var(--navy);color:var(--sun);transform:scale(1.06) rotate(-4deg)}
+  .svc.big:hover .ico,.svc.sun:hover .ico{background:var(--sun);color:var(--navy-d)}
+}
+
+/* doctors */
+.doc-grid{display:grid;gap:16px;margin-top:2.6rem}
+.doc-card{position:relative;display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r-card);min-height:480px;isolation:isolate}
+.doc-card.one{background:linear-gradient(155deg,var(--navy-d),var(--navy) 90%);color:#fff}
+.doc-card.two{background:linear-gradient(155deg,var(--sun) 0%,#f7dfa0 100%);color:var(--navy-d)}
+.doc-card .txt{position:relative;z-index:2;padding:1.8rem 1.8rem 0;max-width:30rem}
+.doc-card h3{font-size:clamp(1.5rem,3vw,2rem)}
+.doc-card .role{font-weight:700;font-size:.95rem;margin-top:.35rem;color:var(--teal)}
+.doc-card.two .role{color:var(--navy)}
+.doc-card p{margin-top:.8rem;font-size:1.02rem}
+.doc-card.one p{color:#DCE5FA}
+.doc-card.two p{color:#2c2a14}
+.doc-card .pic{margin-top:auto;display:flex;justify-content:flex-end;padding-right:1rem}
+.doc-card .pic img{width:min(300px,64%);-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
+.doc-card.one::before{content:"";position:absolute;right:-12%;bottom:-18%;width:70%;aspect-ratio:1;border-radius:50%;background:var(--teal);opacity:.85;z-index:-1}
+
+/* team */
+.team-photo{margin-top:2.4rem;border-radius:var(--r-card);overflow:hidden;box-shadow:0 30px 60px -34px rgba(7,22,63,.6);clip-path:inset(0 0 12% 0 round 28px);transition:clip-path 1s var(--ease-io)}
+.team-photo.in{clip-path:inset(0 0 0 0 round 28px)}
+.team-photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.scroll-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-top:3.2rem}
+.scroll-head h3{font-size:clamp(1.4rem,3vw,1.9rem)}
+.arrows{display:flex;gap:8px}
+.arrow{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;transition:transform .2s var(--ease),background .2s,opacity .2s}
+.arrow:active{transform:scale(.94)}
+.arrow[disabled]{opacity:.35;cursor:default}
+.arrow svg{width:22px;height:22px}
+.arrow.flip svg{transform:rotate(90deg)}
+.arrow.nxt svg{transform:rotate(-90deg)}
+.staff-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:1.2rem var(--edge) 1.6rem;margin-inline:calc(50% - 50vw);scroll-padding-inline:var(--edge);scrollbar-width:none;cursor:grab}
+.staff-track::-webkit-scrollbar{display:none}
+.staff-track.drag{cursor:grabbing;scroll-snap-type:none}
+.person{flex:0 0 clamp(170px,44vw,220px);scroll-snap-align:start;border-radius:var(--r-tile);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 14px 30px -24px rgba(7,22,63,.6);transition:transform .3s var(--ease)}
+.person img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:top;pointer-events:none;-webkit-user-drag:none}
+.person div{padding:.8rem 1rem 1rem}
+.person b{display:block;font-family:var(--display);font-size:1rem}
+.person span{display:block;font-size:.9rem;color:var(--dim);margin-top:.1rem}
+@media (hover:hover) and (pointer:fine){.person:hover{transform:translateY(-6px)}.arrow:not([disabled]):hover{background:var(--teal-d)}}
+
+/* reviews */
+.rev-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.2rem}
+.rev-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2rem var(--edge) 1rem;margin-inline:calc(50% - 50vw);scroll-padding-inline:var(--edge);scrollbar-width:none}
+.rev-track::-webkit-scrollbar{display:none}
+.quote{flex:0 0 min(88vw,430px);scroll-snap-align:start;display:flex;flex-direction:column;padding:1.8rem;border-radius:var(--r-card);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.quote .stars{display:flex;gap:3px;color:var(--sun)}
+.quote .stars svg{width:20px;height:20px}
+.quote blockquote{margin-top:1rem;font-size:1.06rem;line-height:1.55;color:#fff;flex:1}
+.quote figcaption{margin-top:1.3rem;font-family:var(--display);font-weight:600}
+.quote figcaption small{display:block;font-family:var(--body);font-weight:500;color:#B9C8EB;font-size:.88rem;margin-top:.1rem}
+.rev-foot{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between;margin-top:1rem}
+.rev-foot a.more{font-family:var(--display);font-weight:600;color:var(--sun);text-decoration:underline;text-underline-offset:5px}
+
+/* experience bento */
+.xp-grid{display:grid;gap:14px;margin-top:2.6rem}
+.xp{position:relative;border-radius:var(--r-card);padding:1.8rem;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:230px}
+.xp h3{font-size:clamp(1.3rem,2.6vw,1.8rem)}
+.xp p{margin-top:.6rem;max-width:36ch}
+.xp .ico{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;margin-bottom:auto}
+.xp .ico svg{width:30px;height:30px}
+.xp.a{color:#fff;min-height:340px;background:linear-gradient(0deg,rgba(7,22,63,.92) 12%,rgba(7,22,63,.15) 62%),url(images/equipo.webp) 44% 21%/260% auto}
+.xp.a .ico{background:var(--sun);color:var(--navy-d)}
+.xp.a p{color:#DCE5FA}
+.xp.b{background:var(--navy);color:#fff}
+.xp.b .ico{background:rgba(255,255,255,.14);color:var(--teal)}
+.xp.b p{color:#CFDAF5}
+.xp.c{background:var(--teal);color:var(--navy-d)}
+.xp.c .ico{background:rgba(7,22,63,.1)}
+.xp.c p{color:#08264a}
+
+/* faq */
+.faq-wrap{max-width:820px}
+.faq{margin-top:2.2rem;display:grid;gap:10px}
+.qa{border-radius:var(--r-tile);background:var(--paper);border:1px solid var(--line);overflow:hidden;transition:background .3s,border-color .3s}
+.qa.open{background:#fff;border-color:var(--teal)}
+.qa button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;padding:1.15rem 1.3rem;min-height:60px;font-family:var(--display);font-weight:600;font-size:1.05rem}
+.qa button svg{width:22px;height:22px;transition:transform .35s var(--ease);color:var(--teal-d)}
+.qa.open button svg{transform:rotate(180deg)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding:0 1.3rem 1.3rem;color:var(--dim)}
+
+/* visit */
+.visit-grid{display:grid;gap:18px;margin-top:2.6rem}
+.card{background:#fff;border-radius:var(--r-card);border:1px solid var(--line);padding:1.8rem;box-shadow:0 22px 50px -34px rgba(7,22,63,.55)}
+.info-list{display:grid;gap:1rem}
+.info-list a,.info-list div.row{display:flex;gap:.8rem;align-items:flex-start;font-weight:500}
+.info-list svg{width:24px;height:24px;color:var(--teal-d);margin-top:2px}
+.info-list a{transition:color .2s}
+.hours{margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1.1rem}
+.hours h3{font-size:1.1rem;margin-bottom:.6rem}
+.hours dl{display:grid;gap:2px}
+.hours .r{display:flex;justify-content:space-between;gap:1rem;padding:.4rem .7rem;border-radius:10px;font-size:.98rem}
+.hours .r.today{background:var(--teal-l);font-weight:700;color:var(--navy-d)}
+.hours dt{font-weight:600}
+.map{border-radius:var(--r-card);overflow:hidden;min-height:340px;border:1px solid var(--line);background:#dfe9ef;box-shadow:0 22px 50px -34px rgba(7,22,63,.55)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0}
+.areas{margin-top:1.8rem}
+.areas p{font-weight:600;color:var(--dim)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:.8rem}
+.chips span{padding:.45rem .95rem;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:600;font-size:.92rem}
+
+/* cta + form */
+.cta-grid{display:grid;gap:2rem;align-items:center}
+.cta h2{color:var(--navy-d);font-size:clamp(2rem,5vw,3.4rem);max-width:12ch}
+.cta p.sub{color:#0b2a52;max-width:38ch}
+.cta .phone{display:inline-flex;align-items:center;gap:.7rem;margin-top:1.6rem;font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--navy-d)}
+.cta .phone svg{width:1.2em;height:1.2em}
+.formcard{position:relative;background:#fff;border-radius:var(--r-card);padding:1.8rem;box-shadow:0 34px 70px -34px rgba(5,15,43,.7)}
+.field{display:grid;gap:.4rem;margin-bottom:1rem}
+.field label{font-weight:700;font-size:.92rem;color:var(--navy-d)}
+.field input,.field select{width:100%;min-height:52px;padding:.75rem 1rem;border-radius:var(--r-field);border:2px solid #b8c4de;background:#fff;font:inherit;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(12,42,115,.15)}
+.field.invalid input{border-color:#B3261E}
+.field .err{display:none;font-size:.88rem;color:#B3261E;font-weight:600}
+.field.invalid .err{display:block}
+.formcard .btn{width:100%}
+.success{position:absolute;inset:0;border-radius:inherit;background:#fff;display:grid;place-content:center;justify-items:center;text-align:center;gap:.8rem;padding:2rem;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.success.show{opacity:1;visibility:visible}
+.success svg.ok{width:92px;height:92px}
+.success circle{fill:none;stroke:var(--teal-d);stroke-width:5;stroke-dasharray:290;stroke-dashoffset:290}
+.success path{fill:none;stroke:var(--navy);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60}
+.success.show circle{animation:draw2 .7s var(--ease-io) forwards}
+.success.show path{animation:draw2 .45s .55s var(--ease-io) forwards}
+@keyframes draw2{to{stroke-dashoffset:0}}
+.success h3{font-size:1.5rem}
+.success p{color:var(--dim);max-width:30ch}
+.success button{margin-top:.4rem;font-weight:700;text-decoration:underline;text-underline-offset:4px;min-height:44px;color:var(--navy)}
+
+/* footer */
+footer{background:var(--navy-dd);color:#CFDAF5;padding:4.5rem 0 7rem}
+.foot-grid{display:grid;gap:2.2rem}
+.foot-grid img{height:104px;width:auto;object-fit:contain}
+footer h4{font-size:1rem;color:#fff;margin-bottom:.8rem}
+footer ul{list-style:none;display:grid;gap:.45rem}
+footer a{transition:color .2s}
+.foot-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.14);font-size:.92rem;color:#9FB0D8}
+@media (hover:hover) and (pointer:fine){footer a:hover{color:var(--sun)}.info-list a:hover{color:var(--teal-d)}}
+
+/* mobile bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:90;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:999px;background:rgba(7,22,63,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 18px 40px -16px rgba(5,15,43,.8);transform:translateY(0);transition:transform .35s var(--ease)}
+.mbar .btn{min-height:48px;padding:.6rem 1rem}
+
+/* ---------- breakpoints ---------- */
+@media (min-width:640px){
+  .stat-grid{grid-template-columns:repeat(4,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .xp-grid{grid-template-columns:1fr 1fr}
+  .xp.a{grid-column:1/-1}
+}
+@media (min-width:900px){
+  .links{display:flex}.nav-end{margin-left:0}.open-chip{display:inline-flex}.burger{display:none}.menu{display:none!important}
+  .hero{padding:7.2rem 0 9rem}
+  .hero-grid{grid-template-columns:1.05fr .95fr;min-height:min(640px,calc(100dvh - 15rem))}
+  .svc-grid{grid-template-columns:repeat(4,1fr)}
+  .svc.big{grid-column:span 2}
+  .doc-grid{grid-template-columns:7fr 5fr}
+  .doc-card .pic img{width:min(340px,70%)}
+  .doc-card.one .pic img{width:min(400px,62%)}
+  .xp-grid{grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr}
+  .xp.a{grid-column:1;grid-row:1/3;min-height:460px}
+  .visit-grid{grid-template-columns:5fr 6fr}
+  .cta-grid{grid-template-columns:1fr 1fr;gap:4rem}
+  .foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}
+  .mbar{display:none}
+  footer{padding-bottom:4rem}
+}
+@media (max-width:899px){.nav-end .lang{order:-1}}
+@media (max-width:560px){.cta-row .btn{flex:1 1 100%}}
+@media (max-width:420px){.brand img{height:52px}.nav-in{padding-left:12px;gap:8px}.lang button{min-width:40px;padding:0 .5rem}.hero h1{font-size:2.2rem}.btn{padding-inline:1.3rem}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .mesh::before,.mesh::after,.blob{animation:none!important}
+  .enter,.reveal{opacity:1!important;transform:none!important}
+  .team-photo{clip-path:none!important}
+  .smile path{stroke-dashoffset:0!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-t="skip">Saltar al contenido</a>
+
+<div id="splash" aria-hidden="true"><img src="images/logo.webp" alt="" width="760" height="559"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="My Tamarac Dentist" data-t-aria="brand_aria"><img src="images/logo.webp" alt="My Tamarac Dentist" width="82" height="60" data-t-alt="logo_alt"></a>
+    <nav class="links" aria-label="Principal" data-t-aria="nav_aria">
+      <a href="#servicios" data-t="nav_services">Servicios</a>
+      <a href="#doctores" data-t="nav_doctors">Doctores</a>
+      <a href="#resenas" data-t="nav_reviews">Reseñas</a>
+      <a href="#visitenos" data-t="nav_visit">Visítenos</a>
+    </nav>
+    <div class="nav-end">
+      <span class="open-chip" id="openChip" hidden><i></i><span id="openTxt"></span></span>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      </div>
+      <a class="btn btn-sun btn-sm" href="#cita" data-magnetic data-t="cta_book" style="display:none" id="navCta">Pedir cita</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menú" data-t-aria="menu_aria"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg></button>
+    </div>
+  </div>
+  <div class="menu" id="menu">
+    <a href="#servicios" data-t="nav_services">Servicios</a>
+    <a href="#doctores" data-t="nav_doctors">Doctores</a>
+    <a href="#resenas" data-t="nav_reviews">Reseñas</a>
+    <a href="#visitenos" data-t="nav_visit">Visítenos</a>
+    <a href="#cita" data-t="cta_book">Pedir cita</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="mesh" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="enter" style="--d:0"><span data-t="hero_h1a">Venga al dentista.</span> <span data-t="hero_h1b" style="color:#fff">Salga sonriendo.</span></h1>
+      <p class="lead enter" style="--d:1" data-t="hero_sub">Odontología general y estética en Tamarac con la Dra. Flor Luzardo y su equipo, en inglés y español.</p>
+      <div class="cta-row enter" style="--d:2">
+        <a class="btn btn-sun" href="#cita" data-magnetic data-t="cta_book">Pedir cita</a>
+        <a class="btn btn-ghost" href="tel:+19547248486" data-magnetic><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></svg><span data-t="cta_call">Llamar</span> (954) 724-8486</a>
+      </div>
+    </div>
+    <div class="hero-art enter" style="--d:3" id="heroArt">
+      <div class="blob" aria-hidden="true"></div>
+      <svg class="smile" viewBox="0 0 120 40" fill="none" aria-hidden="true"><path d="M8 8 C 30 36, 90 36, 112 8" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>
+      <img class="doc" src="images/dra-luzardo.webp" width="900" height="1276" alt="Dra. Flor Luzardo" data-t-alt="alt_flor" fetchpriority="high">
+    </div>
+  </div>
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="currentColor" d="M0 50 C 240 100 480 0 720 40 C 960 80 1200 10 1440 50 L1440 90 L0 90 Z"/></svg></div>
+</section>
+
+<section class="stats" aria-label="Datos" data-t-aria="stats_aria">
+  <div class="wrap stat-grid">
+    <div class="stat reveal" style="--d:0"><b data-count-to="5" data-decimals="1">5,0</b><div class="stars" aria-hidden="true"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg></div><span data-t="stat_rating">en Google Maps</span></div>
+    <div class="stat reveal" style="--d:1"><b data-count-to="2319" data-decimals="0">2.319</b><span data-t="stat_reviews">reseñas en Google</span></div>
+    <div class="stat reveal" style="--d:2"><b data-count-to="14" data-decimals="0">14</b><span data-t="stat_treat">tratamientos</span></div>
+    <div class="stat reveal" style="--d:3"><b data-count-to="6" data-decimals="0">6</b><span data-t="stat_days">días a la semana</span></div>
+  </div>
+</section>
+
+<section class="sec bg-paper" id="servicios" style="margin-top:-1px">
+  <div class="wrap">
+    <span class="kicker reveal" data-t="svc_kicker">Tratamientos</span>
+    <h2 class="title reveal" data-t="svc_title">Todos los tratamientos, en un solo consultorio.</h2>
+    <div class="svc-grid">
+      <article class="svc big reveal" style="--d:0"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></svg></div><h3 data-t="s_cosmetic">Odontología estética</h3><p data-t="d_cosmetic">Tratamientos para mejorar el aspecto de su sonrisa.</p></article>
+      <article class="svc big reveal" style="--d:1"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M224,112H200a8,8,0,0,0,0,16h15.64A88.15,88.15,0,0,1,136,207.63V95a32,32,0,1,0-16,0V207.63A88.15,88.15,0,0,1,40.36,128H56a8,8,0,0,0,0-16H32a8,8,0,0,0-8,8,104,104,0,0,0,208,0A8,8,0,0,0,224,112ZM112,64a16,16,0,1,1,16,16A16,16,0,0,1,112,64Z"/></svg></div><h3 data-t="s_implants">Implantes dentales</h3><p data-t="d_implants">Una solución para reemplazar dientes ausentes. Llámenos para conversar su caso.</p></article>
+      <article class="svc  reveal" style="--d:2"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M171,71.42,149.54,80,171,88.57A8,8,0,1,1,165,103.42L128,88.61,91,103.42A8,8,0,1,1,85,88.57L106.46,80,85,71.42A8,8,0,1,1,91,56.57l37,14.81,37-14.81A8,8,0,1,1,171,71.42Zm53,8.33c0,42.72-8,75.4-14.69,95.28-8.73,25.8-20.63,45.49-32.65,54a15.69,15.69,0,0,1-15.95,1.41,16.09,16.09,0,0,1-9.18-13.36C150.68,205.58,146.48,168,128,168s-22.68,37.59-23.53,49.11a16.09,16.09,0,0,1-16,14.9,15.67,15.67,0,0,1-9.13-2.95c-12-8.53-23.92-28.22-32.65-54C40,155.15,32,122.47,32,79.75A56,56,0,0,1,88,24h80A56,56,0,0,1,224,79.75Zm-16,0A40,40,0,0,0,168,40H88A40,40,0,0,0,48,79.76c0,40.55,7.51,71.4,13.85,90.14,11.05,32.66,23,43.37,26.61,46C91.57,174.67,105.59,152,128,152s36.45,22.71,39.49,63.94h0c3.6-2.59,15.57-13.26,26.66-46C200.49,151.16,208,120.31,208,79.76Z"/></svg></div><h3 data-t="s_cleanings">Limpiezas y chequeos</h3><p data-t="d_cleanings">Prevención y revisión periódica de dientes y encías.</p></article>
+      <article class="svc  reveal" style="--d:3"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM128,216a72.08,72.08,0,0,1-72-72c0-57.23,55.47-105,72-118,16.53,13,72,60.75,72,118A72.08,72.08,0,0,1,128,216Zm55.89-62.66a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68Z"/></svg></div><h3 data-t="s_deep">Limpieza profunda</h3><p data-t="d_deep">Limpieza más a fondo para cuidar la salud de sus encías.</p></article>
+      <article class="svc  reveal" style="--d:0"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M237.66,133.66l-32,32a8,8,0,0,1-11.32-11.32L212.69,136H43.31l18.35,18.34a8,8,0,0,1-11.32,11.32l-32-32a8,8,0,0,1,0-11.32l32-32a8,8,0,0,1,11.32,11.32L43.31,120H212.69l-18.35-18.34a8,8,0,0,1,11.32-11.32l32,32A8,8,0,0,1,237.66,133.66Z"/></svg></div><h3 data-t="s_aligners">Alineadores transparentes</h3><p data-t="d_aligners">Alineación dental con alineadores discretos.</p></article>
+      <article class="svc  reveal" style="--d:1"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M220.27,158.54a8,8,0,0,0-7.7-.46,20,20,0,1,1,0-36.16A8,8,0,0,0,224,114.69V72a16,16,0,0,0-16-16H171.78a35.36,35.36,0,0,0,.22-4,36.11,36.11,0,0,0-11.36-26.24,36,36,0,0,0-60.55,23.62,36.56,36.56,0,0,0,.14,6.62H64A16,16,0,0,0,48,72v32.22a35.36,35.36,0,0,0-4-.22,36.12,36.12,0,0,0-26.24,11.36,35.7,35.7,0,0,0-9.69,27,36.08,36.08,0,0,0,33.31,33.6,35.68,35.68,0,0,0,6.62-.14V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V165.31A8,8,0,0,0,220.27,158.54ZM208,208H64V165.31a8,8,0,0,0-11.43-7.23,20,20,0,1,1,0-36.16A8,8,0,0,0,64,114.69V72h46.69a8,8,0,0,0,7.23-11.43,20,20,0,1,1,36.16,0A8,8,0,0,0,161.31,72H208v32.23a35.68,35.68,0,0,0-6.62-.14A36,36,0,0,0,204,176a35.36,35.36,0,0,0,4-.22Z"/></svg></div><h3 data-t="s_fillings">Empastes</h3><p data-t="d_fillings">Reparación de dientes dañados por caries.</p></article>
+      <article class="svc  reveal" style="--d:2"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg></div><h3 data-t="s_whitening">Blanqueamiento dental</h3><p data-t="d_whitening">Tratamiento para aclarar el color de sus dientes.</p></article>
+      <article class="svc  reveal" style="--d:3"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"/></svg></div><h3 data-t="s_veneers">Carillas</h3><p data-t="d_veneers">Carillas de porcelana para cambiar el aspecto de sus dientes.</p></article>
+      <article class="svc  reveal" style="--d:0"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M200,40H56A16,16,0,0,0,40,56V200a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,80H136V56h64ZM120,56v64H56V56ZM56,136h64v64H56Zm144,64H136V136h64v64Z"/></svg></div><h3 data-t="s_allon4">All-on-4</h3><p data-t="d_allon4">Restauración de una arcada completa sobre cuatro implantes.</p></article>
+      <article class="svc  reveal" style="--d:1"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M240,128a8,8,0,0,1-8,8H204.94l-37.78,75.58A8,8,0,0,1,160,216h-.4a8,8,0,0,1-7.08-5.14L95.35,60.76,63.28,131.31A8,8,0,0,1,56,136H24a8,8,0,0,1,0-16H50.85L88.72,36.69a8,8,0,0,1,14.76.46l57.51,151,31.85-63.71A8,8,0,0,1,200,120h32A8,8,0,0,1,240,128Z"/></svg></div><h3 data-t="s_root">Endodoncia</h3><p data-t="d_root">Tratamiento para aliviar el dolor y conservar su diente natural.</p></article>
+      <article class="svc  reveal" style="--d:2"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,200H40V72H216V200Zm-56-64a8,8,0,0,1-8,8H136v16a8,8,0,0,1-16,0V144H104a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v16h16A8,8,0,0,1,160,136Z"/></svg></div><h3 data-t="s_wisdom">Muelas del juicio</h3><p data-t="d_wisdom">Extracción planificada de las muelas del juicio.</p></article>
+      <article class="svc  reveal" style="--d:3"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M230.9,73.6A15.85,15.85,0,0,0,212,77.39l-33.67,36.29-35.8-80.29a1,1,0,0,1,0-.1,16,16,0,0,0-29.06,0,1,1,0,0,1,0,.1l-35.8,80.29L44,77.39A16,16,0,0,0,16.25,90.81c0,.11,0,.21.07.32L39,195a16,16,0,0,0,15.72,13H201.29A16,16,0,0,0,217,195L239.68,91.13c0-.11,0-.21.07-.32A15.85,15.85,0,0,0,230.9,73.6ZM201.35,191.68l-.06.32H54.71l-.06-.32L32,88l.14.16,42,45.24a8,8,0,0,0,13.18-2.18L128,40l40.69,91.25a8,8,0,0,0,13.18,2.18l42-45.24L224,88Z"/></svg></div><h3 data-t="s_crowns">Coronas dentales</h3><p data-t="d_crowns">Coronas a medida para restaurar un diente dañado.</p></article>
+      <article class="svc  reveal" style="--d:0"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M231.67,60.89a35.82,35.82,0,0,0-23.82-12.74,36,36,0,1,0-66.37,22.92.25.25,0,0,1,0,.08L71.17,141.51s0,0-.1,0a36,36,0,1,0-22.92,66.37,36,36,0,1,0,66.37-22.92.54.54,0,0,1,0-.08l70.35-70.36s0,0,.1,0a36,36,0,0,0,46.74-53.63ZM219.1,97.16a20,20,0,0,1-25.67,3.8,16,16,0,0,0-19.88,2.19l-70.4,70.4A16,16,0,0,0,101,193.43a20,20,0,1,1-36.75,7.5,8,8,0,0,0-7.91-9.24,8.5,8.5,0,0,0-1.23.1A20,20,0,1,1,62.57,155a16,16,0,0,0,19.88-2.19l70.4-70.4A16,16,0,0,0,155,62.57a20,20,0,1,1,36.75-7.5,8,8,0,0,0,9.14,9.14,20,20,0,0,1,18.17,33Z"/></svg></div><h3 data-t="s_jaw">Ortopedia funcional de maxilares</h3><p data-t="d_jaw">Un enfoque funcional para la posición y el desarrollo de los maxilares.</p></article>
+      <article class="svc sun reveal" style="--d:1"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M120,16V8a8,8,0,0,1,16,0v8a8,8,0,0,1-16,0Zm80,32a8,8,0,0,0,5.66-2.34l8-8a8,8,0,0,0-11.32-11.32l-8,8A8,8,0,0,0,200,48ZM50.34,45.66A8,8,0,0,0,61.66,34.34l-8-8A8,8,0,0,0,42.34,37.66Zm87,26.45a8,8,0,1,0-2.64,15.78C153.67,91.08,168,108.32,168,128a8,8,0,0,0,16,0C184,100.6,163.93,76.57,137.32,72.11ZM232,176v24a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V176a16,16,0,0,1,16-16V128a88,88,0,0,1,88.67-88c48.15.36,87.33,40.29,87.33,89v31A16,16,0,0,1,232,176ZM56,160H200V129c0-40-32.05-72.71-71.45-73H128a72,72,0,0,0-72,72Zm160,40V176H40v24H216Z"/></svg></div><h3 data-t="s_emergency">Emergencias dentales</h3><p data-t="d_emergency">Atención para urgencias dentales. Llámenos.</p><a href="tel:+19547248486">(954) 724-8486</a></article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-teal-l" id="doctores">
+  <div class="wrap">
+    <h2 class="title reveal" data-t="doc_title">Conozca a sus doctores.</h2>
+    <div class="doc-grid">
+      <article class="doc-card one reveal">
+        <div class="txt">
+          <h3>Dra. Flor Luzardo</h3>
+          <div class="role" data-t="flor_role">Odontóloga</div>
+          <p data-t="flor_bio">Quiere que cada visita se sienta como un respiro de aire fresco. Se graduó summa cum laude, tiene una maestría en ortopedia y un fellowship en implantología.</p>
+        </div>
+        <div class="pic"><img src="images/dra-luzardo.webp" width="900" height="1276" loading="lazy" alt="Dra. Flor Luzardo" data-t-alt="alt_flor"></div>
+      </article>
+      <article class="doc-card two reveal" style="--d:2">
+        <div class="txt">
+          <h3>Dr. Emilio Rodríguez</h3>
+          <div class="role" data-t="emilio_role">Odontólogo, prostodoncista</div>
+          <p data-t="emilio_bio">Cum laude, maestría en Prostodoncia y profesor. Nació y creció en República Dominicana. Habla inglés, portugués y español.</p>
+        </div>
+        <div class="pic"><img src="images/dr-rodriguez.webp" width="900" height="1258" loading="lazy" alt="Dr. Emilio Rodríguez" data-t-alt="alt_emilio"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-white" id="equipo">
+  <div class="wrap">
+    <h2 class="title reveal" data-t="team_title">Un equipo que le da la bienvenida.</h2>
+    <figure class="team-photo reveal" id="teamPhoto"><img src="images/equipo.webp" width="1600" height="1067" loading="lazy" alt="El equipo de My Tamarac Dentist en la recepción" data-t-alt="alt_team"></figure>
+    <div class="scroll-head reveal">
+      <h3 data-t="staff_title">Las personas detrás de su cita</h3>
+      <div class="arrows"><button class="arrow flip" id="stPrev" type="button" aria-label="Anterior" data-t-aria="prev"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button><button class="arrow nxt" id="stNext" type="button" aria-label="Siguiente" data-t-aria="next"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button></div>
+    </div>
+  </div>
+  <div class="wrap"><div class="staff-track" id="staff" tabindex="0" role="region" aria-label="Equipo" data-t-aria="staff_aria">
+    <figure class="person"><img src="images/reinaldo.webp" width="520" height="780" loading="lazy" alt="Reinaldo"><div><b>Reinaldo</b><span data-t="r_captain">Captain</span></div></figure>
+    <figure class="person"><img src="images/tifany.webp" width="520" height="780" loading="lazy" alt="Tifany"><div><b>Tifany</b><span data-t="r_operations_manager">Gerente de operaciones</span></div></figure>
+    <figure class="person"><img src="images/maria-luisa.webp" width="520" height="780" loading="lazy" alt="María Luisa"><div><b>María Luisa</b><span data-t="r_assistant_manager">Gerente asistente</span></div></figure>
+    <figure class="person"><img src="images/santiago-puga.webp" width="520" height="780" loading="lazy" alt="Santiago Puga"><div><b>Santiago Puga</b><span data-t="r_front_desk_manager">Gerente de recepción</span></div></figure>
+    <figure class="person"><img src="images/valeria-hernandez.webp" width="520" height="780" loading="lazy" alt="Valeria Hernandez"><div><b>Valeria Hernandez</b><span data-t="r_front_desk_concierge">Concierge de recepción</span></div></figure>
+    <figure class="person"><img src="images/ana.webp" width="520" height="780" loading="lazy" alt="Ana"><div><b>Ana</b><span data-t="r_hygienist">Higienista</span></div></figure>
+    <figure class="person"><img src="images/brizma.webp" width="520" height="780" loading="lazy" alt="Brizma"><div><b>Brizma</b><span data-t="r_hygienist">Higienista</span></div></figure>
+    <figure class="person"><img src="images/elisa-chiqueto.webp" width="520" height="780" loading="lazy" alt="Elisa Chiqueto"><div><b>Elisa Chiqueto</b><span data-t="r_hygienist">Higienista</span></div></figure>
+    <figure class="person"><img src="images/felix.webp" width="520" height="780" loading="lazy" alt="Felix"><div><b>Felix</b><span data-t="r_lead_assistant">Asistente principal</span></div></figure>
+    <figure class="person"><img src="images/maria-jose.webp" width="520" height="780" loading="lazy" alt="Maria Jose"><div><b>Maria Jose</b><span data-t="r_assistant">Asistente</span></div></figure>
+    <figure class="person"><img src="images/brislaury.webp" width="520" height="780" loading="lazy" alt="Brislaury"><div><b>Brislaury</b><span data-t="r_dental_assistant">Asistente dental</span></div></figure>
+
+  </div></div>
+</section>
+
+<section class="sec bg-navy" id="resenas">
+  <div class="wrap">
+    <div class="rev-head">
+      <div>
+        <span class="kicker reveal" data-t="rev_kicker">Reseñas en Google</span>
+        <h2 class="title reveal" data-t="rev_title">Lo que dicen sus pacientes.</h2>
+      </div>
+      <div class="arrows reveal"><button class="arrow flip" id="rvPrev" type="button" aria-label="Anterior" data-t-aria="prev" style="background:rgba(255,255,255,.16)"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button><button class="arrow nxt" id="rvNext" type="button" aria-label="Siguiente" data-t-aria="next" style="background:rgba(255,255,255,.16)"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button></div>
+    </div>
+    <div class="rev-track" id="revTrack" tabindex="0" role="region" aria-label="Reseñas" data-t-aria="rev_aria">
+      <figure class="quote"><div class="stars" role="img" aria-label="5 / 5"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg></div><blockquote lang="en">“Great experience at Tamarac dentist very friendly and professional highly recommend.”</blockquote><figcaption>Jonathan C.<small data-t="rev_g_en">Google, reseña original en inglés</small></figcaption></figure>
+      <figure class="quote"><div class="stars" role="img" aria-label="5 / 5"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg></div><blockquote lang="en">“You will not find a better dental practice in all of Florida! They are a team of exceptionally professional, experienced, and honest persons. And the atmosphere is the cleanest I have ever seen in a dental office! Ask for Brizma for your cleaning! Superb!!! We come down from Yulee Florida for My Tamarac Dentist care!”</blockquote><figcaption>Laura M.<small data-t="rev_g_en">Google, reseña original en inglés</small></figcaption></figure>
+      <figure class="quote"><div class="stars" role="img" aria-label="5 / 5"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg></div><blockquote lang="en">“Brizma was very gentle and took her time during my cleaning. She even took the time to educate me on improving my oral health. The office is welcoming and I also loved the cleanliness. The equipment used are modern and up to date. I will most definitely will be returning”</blockquote><figcaption>Marjory S.<small data-t="rev_g_en">Google, reseña original en inglés</small></figcaption></figure>
+      <figure class="quote"><div class="stars" role="img" aria-label="5 / 5"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg></div><blockquote lang="es">“La atención y las indicaciones muy claras. El servicio impecable. Fui atendido por Brizma y ella fue además de muy profesional, muy empática.”</blockquote><figcaption>Arturo C.<small data-t="rev_g_es">Google</small></figcaption></figure>
+
+    </div>
+    <div class="rev-foot">
+      <a class="more" href="https://www.google.com/maps/place/My+Tamarac+Dentist/@26.1944022,-80.2450755,17z" target="_blank" rel="noopener" data-t="rev_more">Ver las 2.319 reseñas en Google</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-sun" id="cita-a-su-medida">
+  <div class="wrap">
+    <h2 class="title reveal" data-t="xp_title" style="color:var(--navy-d)">Su cita, a su manera.</h2>
+    <div class="xp-grid">
+      <div class="xp a reveal"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224Zm-3.56-110.66-48-32A8,8,0,0,0,104,88v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,137.05V103l25.58,17Z"/></svg></div><div><h3 data-t="xp_a_h">Su serie, película o juego durante la cita</h3><p data-t="xp_a_p">Pantallas en el techo y audífonos inalámbricos para que se relaje mientras cuidamos su sonrisa.</p></div></div>
+      <div class="xp b reveal" style="--d:2"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M168,112a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,112Zm-8,24H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm72-8A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"/></svg></div><div><h3 data-t="xp_b_h">Le explicamos cada paso</h3><p data-t="xp_b_p">Nos tomamos el tiempo de explicar y personalizar cada plan de tratamiento.</p></div></div>
+      <div class="xp c reveal" style="--d:3"><div class="ico"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M220,160a12,12,0,1,1-12-12A12,12,0,0,1,220,160Zm-4.55,39.29A48.08,48.08,0,0,1,168,240H144a48.05,48.05,0,0,1-48-48V151.49A64,64,0,0,1,40,88V40a8,8,0,0,1,8-8H72a8,8,0,0,1,0,16H56V88a48,48,0,0,0,48.64,48c26.11-.34,47.36-22.25,47.36-48.83V48H136a8,8,0,0,1,0-16h24a8,8,0,0,1,8,8V87.17c0,32.84-24.53,60.29-56,64.31V192a32,32,0,0,0,32,32h24a32.06,32.06,0,0,0,31.22-25,40,40,0,1,1,16.23.27ZM232,160a24,24,0,1,0-24,24A24,24,0,0,0,232,160Z"/></svg></div><div><h3 data-t="xp_c_h">Tecnología de diagnóstico</h3><p data-t="xp_c_p">Usamos herramientas de diagnóstico avanzadas y láseres dentales.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-white" id="faq">
+  <div class="wrap faq-wrap">
+    <h2 class="title reveal" data-t="faq_title">Preguntas frecuentes.</h2>
+    <div class="faq reveal" id="faqList">
+      <div class="qa"><button type="button" aria-expanded="false" aria-controls="ans0" id="q0"><span data-t="q0">¿Atienden emergencias dentales?</span><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button><div class="ans" id="ans0" role="region" aria-labelledby="q0"><div><p data-t="a0">Sí, ofrecemos odontología de emergencia. Llámenos al (954) 724-8486.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false" aria-controls="ans1" id="q1"><span data-t="q1">¿Aceptan mi seguro dental?</span><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button><div class="ans" id="ans1" role="region" aria-labelledby="q1"><div><p data-t="a1">Llámenos al (954) 724-8486 y le confirmamos.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false" aria-controls="ans2" id="q2"><span data-t="q2">¿Cuánto cuesta un tratamiento y hay opciones de pago?</span><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button><div class="ans" id="ans2" role="region" aria-labelledby="q2"><div><p data-t="a2">Depende de cada caso. Llámenos al (954) 724-8486 y le confirmamos precios y opciones de pago.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false" aria-controls="ans3" id="q3"><span data-t="q3">¿Atienden en español?</span><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button><div class="ans" id="ans3" role="region" aria-labelledby="q3"><div><p data-t="a3">Sí, atendemos en inglés y español. El Dr. Emilio Rodríguez también habla portugués.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false" aria-controls="ans4" id="q4"><span data-t="q4">¿Qué pasa en mi primera cita?</span><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button><div class="ans" id="ans4" role="region" aria-labelledby="q4"><div><p data-t="a4">Le explicamos cada paso y personalizamos su plan de tratamiento. Durante la cita puede ver su serie, película o juego en las pantallas del techo.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false" aria-controls="ans5" id="q5"><span data-t="q5">¿Cuál es el horario?</span><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></button><div class="ans" id="ans5" role="region" aria-labelledby="q5"><div><p data-t="a5">De lunes a viernes de 8:30 a. m. a 5:00 p. m. (los martes hasta las 6:00 p. m.) y los sábados de 8:30 a. m. a 1:00 p. m. Los domingos estamos cerrados.</p></div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-paper" id="visitenos">
+  <div class="wrap">
+    <span class="kicker reveal" data-t="visit_kicker">Visítenos</span>
+    <h2 class="title reveal" data-t="visit_title">Estamos en Tamarac.</h2>
+    <div class="visit-grid">
+      <div class="card reveal">
+        <div class="info-list">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=7030+NW+57th+St,+Tamarac,+FL+33319" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></svg><span>7030 NW 57th St<br>Tamarac, FL 33319</span></a>
+          <a href="tel:+19547248486"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></svg><span>(954) 724-8486</span></a>
+          <a href="mailto:frontdesk@mytamaracdentist.com"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"/></svg><span>frontdesk@mytamaracdentist.com</span></a>
+          <div class="row"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></svg><span id="openTxt2"></span></div>
+        </div>
+        <div class="hours"><h3 data-t="hours_title">Horario</h3><dl id="hoursList"></dl></div>
+        <a class="btn btn-navy" style="margin-top:1.4rem" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=7030+NW+57th+St,+Tamarac,+FL+33319" data-t="directions">Cómo llegar</a>
+      </div>
+      <div class="map reveal" style="--d:2"><iframe title="Mapa" data-t-title="map_title" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=7030+NW+57th+St,+Tamarac,+FL+33319&output=embed"></iframe></div>
+    </div>
+    <div class="areas reveal">
+      <p data-t="areas_h">También atendemos a pacientes de</p>
+      <div class="chips"><span>Lauderhill</span><span>Plantation</span><span>North Lauderdale</span><span>Margate</span><span>Sunrise</span><span>Coral Springs</span><span>Parkland</span><span>Lauderdale Lakes</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta bg-teal" id="cita">
+  <div class="wrap cta-grid">
+    <div class="reveal">
+      <h2 data-t="cta_title">Pida su cita.</h2>
+      <p class="sub" data-t="cta_sub">Déjenos sus datos y lo contactamos para confirmar. También puede llamarnos.</p>
+      <a class="phone" href="tel:+19547248486"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></svg>(954) 724-8486</a>
+    </div>
+    <div class="formcard reveal" style="--d:2">
+      <form id="apptForm" novalidate>
+        <div class="field"><label for="f-name" data-t="f_name">Nombre</label><input id="f-name" name="name" autocomplete="name" required><span class="err" data-t="f_err">Complete este campo.</span></div>
+        <div class="field"><label for="f-phone" data-t="f_phone">Teléfono</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required><span class="err" data-t="f_err">Complete este campo.</span></div>
+        <div class="field"><label for="f-reason" data-t="f_reason">Motivo de la cita</label><select id="f-reason" name="reason"><option data-t-opt="s_cosmetic">Odontología estética</option><option data-t-opt="s_implants">Implantes dentales</option><option data-t-opt="s_cleanings">Limpiezas y chequeos</option><option data-t-opt="s_deep">Limpieza profunda</option><option data-t-opt="s_aligners">Alineadores transparentes</option><option data-t-opt="s_fillings">Empastes</option><option data-t-opt="s_whitening">Blanqueamiento dental</option><option data-t-opt="s_veneers">Carillas</option><option data-t-opt="s_allon4">All-on-4</option><option data-t-opt="s_root">Endodoncia</option><option data-t-opt="s_wisdom">Muelas del juicio</option><option data-t-opt="s_crowns">Coronas dentales</option><option data-t-opt="s_jaw">Ortopedia funcional de maxilares</option><option data-t-opt="s_emergency">Emergencias dentales</option><option data-t-opt="r_other">Otro motivo</option></select></div>
+        <div class="field"><label for="f-day" data-t="f_day">Día preferido</label><select id="f-day" name="day"><option data-t-opt="day_any">Cualquier día</option><option data-t-opt="d_mon">Lunes</option><option data-t-opt="d_tue">Martes</option><option data-t-opt="d_wed">Miércoles</option><option data-t-opt="d_thu">Jueves</option><option data-t-opt="d_fri">Viernes</option><option data-t-opt="d_sat">Sábado</option></select></div>
+        <button class="btn btn-navy" type="submit" data-t="f_send">Enviar solicitud</button>
+      </form>
+      <div class="success" id="success" role="status" aria-live="polite">
+        <svg class="ok" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><path d="M30 52 L45 67 L72 36"/></svg>
+        <h3 data-t="ok_h">Todo listo.</h3>
+        <p data-t="ok_p">Abrimos su correo con el mensaje armado. Envíelo y lo contactamos para confirmar.</p>
+        <button type="button" id="again" data-t="ok_again">Cargar otra solicitud</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><img src="images/logo.webp" alt="My Tamarac Dentist" width="141" height="104" data-t-alt="logo_alt"><p style="margin-top:1rem;max-width:30ch" data-t="foot_blurb">Odontología general y estética en Tamarac, FL.</p></div>
+      <div><h4 data-t="foot_contact">Contacto</h4><ul><li><a href="tel:+19547248486">(954) 724-8486</a></li><li><a href="mailto:frontdesk@mytamaracdentist.com">frontdesk@mytamaracdentist.com</a></li><li>7030 NW 57th St<br>Tamarac, FL 33319</li></ul></div>
+      <div><h4 data-t="hours_title">Horario</h4><ul id="footHours"></ul></div>
+      <div><h4 data-t="foot_nav">Navegar</h4><ul><li><a href="#servicios" data-t="nav_services">Servicios</a></li><li><a href="#doctores" data-t="nav_doctors">Doctores</a></li><li><a href="#resenas" data-t="nav_reviews">Reseñas</a></li><li><a href="#visitenos" data-t="nav_visit">Visítenos</a></li><li><a href="#cita" data-t="cta_book">Pedir cita</a></li></ul></div>
+    </div>
+    <p class="foot-bottom" data-t="copyright">© 2026 My Tamarac Dentist. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn btn-ghost" href="tel:+19547248486"><svg class="ic" aria-hidden="true" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></svg><span data-t="cta_call">Llamar</span></a><a class="btn btn-sun" href="#cita" data-t="cta_book">Pedir cita</a></div>
+
+<script>
+(function(){
+"use strict";
+var T={en:{"skip":"Skip to content","brand_aria":"My Tamarac Dentist, home","logo_alt":"My Tamarac Dentist","nav_aria":"Main","nav_services":"Services","nav_doctors":"Doctors","nav_reviews":"Reviews","nav_visit":"Visit us","menu_aria":"Menu","cta_book":"Book a visit","cta_call":"Call","hero_h1a":"Visit your dentist.","hero_h1b":"Leave smiling.","hero_sub":"General and cosmetic dentistry in Tamarac with Dr. Flor Luzardo and her team, in English and Spanish.","alt_flor":"Dr. Flor Luzardo smiling with arms crossed","alt_emilio":"Dr. Emilio Rodríguez smiling with arms crossed","alt_team":"The My Tamarac Dentist team at the office reception","stats_aria":"Office facts","stat_rating":"on Google Maps","stat_reviews":"Google reviews","stat_treat":"treatments","stat_days":"days a week","svc_kicker":"Treatments","svc_title":"Every treatment, under one roof.","doc_title":"Meet your doctors.","flor_role":"Dentist","flor_bio":"On a mission to make every visit feel like a breath of fresh air. She graduated summa cum laude and holds a master's degree in orthopedics and a fellowship in implantology.","emilio_role":"Dentist, prosthodontist","emilio_bio":"Cum laude, master's in Prosthodontics and professor. Born and raised in the Dominican Republic. Fluent in English, Portuguese and Spanish.","team_title":"A team that welcomes you.","staff_title":"The people behind your visit","prev":"Previous","next":"Next","staff_aria":"Team, swipe to see more","rev_kicker":"Google reviews","rev_title":"What patients say.","rev_aria":"Reviews, swipe to see more","rev_more":"See all 2,319 reviews on Google","rev_g_en":"Google","rev_g_es":"Google, original review in Spanish","xp_title":"Your visit, your way.","xp_a_h":"Your show, movie or game during the visit","xp_a_p":"Ceiling-mounted screens and wireless headphones so you can relax while we take care of your smile.","xp_b_h":"We explain every step","xp_b_p":"We take the time to explain and personalize every treatment plan.","xp_c_h":"Diagnostic technology","xp_c_p":"We use advanced diagnostic tools and dental lasers.","faq_title":"Frequently asked questions.","visit_kicker":"Visit us","visit_title":"Find us in Tamarac.","hours_title":"Hours","directions":"Get directions","map_title":"Map of My Tamarac Dentist","areas_h":"We also welcome patients from","cta_title":"Book your visit.","cta_sub":"Leave your details and we will contact you to confirm. You can also call us.","f_name":"Name","f_phone":"Phone","f_reason":"Reason for the visit","f_day":"Preferred day","f_err":"Please fill in this field.","f_send":"Send request","ok_h":"All set.","ok_p":"We opened your email with the message ready. Send it and we will contact you to confirm.","ok_again":"Start another request","foot_blurb":"General and cosmetic dentistry in Tamarac, FL.","foot_contact":"Contact","foot_nav":"Navigate","copyright":"© 2026 My Tamarac Dentist. All rights reserved.","meta":"General and cosmetic dentistry in Tamarac, FL with Dr. Flor Luzardo and her team. In English and Spanish.","closed":"Closed","today":"today","tomorrow":"tomorrow","d_mon":"Monday","d_tue":"Tuesday","d_wed":"Wednesday","d_thu":"Thursday","d_fri":"Friday","d_sat":"Saturday","d_sun":"Sunday","open_now":"Open now, closes at {t}","closed_next":"Closed, opens {d} at {t}","mail_subject":"Appointment request","mail_body":"Hello, I would like to book an appointment.\n\nName: {name}\nPhone: {phone}\nReason: {reason}\nPreferred day: {day}\n\nThank you.","s_cosmetic":"Cosmetic dentistry","d_cosmetic":"Treatments to improve the look of your smile.","s_implants":"Dental implants","d_implants":"A solution for replacing missing teeth. Call us to talk about your case.","s_cleanings":"Cleanings and check-ups","d_cleanings":"Regular prevention and review of teeth and gums.","s_deep":"Deep cleaning","d_deep":"A more thorough cleaning to care for your gum health.","s_aligners":"Clear aligners","d_aligners":"Teeth alignment with discreet aligners.","s_fillings":"Fillings","d_fillings":"Repair for teeth damaged by cavities.","s_whitening":"Teeth whitening","d_whitening":"A treatment to brighten the color of your teeth.","s_veneers":"Veneers","d_veneers":"Porcelain veneers to change the look of your teeth.","s_allon4":"All-on-4","d_allon4":"Full-arch restoration on four implants.","s_root":"Root canals","d_root":"Treatment to relieve pain and preserve your natural tooth.","s_wisdom":"Wisdom teeth","d_wisdom":"Planned extraction of wisdom teeth.","s_crowns":"Dental crowns","d_crowns":"Custom crowns to restore a damaged tooth.","s_jaw":"Functional jaw orthopedics","d_jaw":"A functional approach to jaw position and development.","s_emergency":"Emergency dentistry","d_emergency":"Care for dental emergencies. Call us.","r_captain":"Captain","r_operations_manager":"Operations Manager","r_assistant_manager":"Assistant Manager","r_front_desk_manager":"Front desk manager","r_front_desk_concierge":"Front Desk Concierge","r_hygienist":"Hygienist","r_lead_assistant":"Lead assistant","r_assistant":"Assistant","r_dental_assistant":"Dental Assistant","q0":"Do you handle dental emergencies?","a0":"Yes, we offer emergency dentistry. Call us at (954) 724-8486.","q1":"Do you accept my dental insurance?","a1":"Call us at (954) 724-8486 and we will confirm.","q2":"How much does a treatment cost, and are there payment options?","a2":"It depends on each case. Call us at (954) 724-8486 and we will confirm prices and payment options.","q3":"Do you speak Spanish?","a3":"Yes, we see patients in English and Spanish. Dr. Emilio Rodríguez also speaks Portuguese.","q4":"What happens at my first visit?","a4":"We explain every step and personalize your treatment plan. During the visit you can watch your show, movie or game on the ceiling screens.","q5":"What are your hours?","a5":"Monday to Friday from 8:30 AM to 5:00 PM (Tuesdays until 6:00 PM) and Saturdays from 8:30 AM to 1:00 PM. We are closed on Sundays.","r_other":"Something else","day_any":"Any day"},es:{"skip":"Saltar al contenido","brand_aria":"My Tamarac Dentist, inicio","logo_alt":"My Tamarac Dentist","nav_aria":"Principal","nav_services":"Servicios","nav_doctors":"Doctores","nav_reviews":"Reseñas","nav_visit":"Visítenos","menu_aria":"Menú","cta_book":"Pedir cita","cta_call":"Llamar","hero_h1a":"Venga al dentista.","hero_h1b":"Salga sonriendo.","hero_sub":"Odontología general y estética en Tamarac con la Dra. Flor Luzardo y su equipo, en inglés y español.","alt_flor":"La Dra. Flor Luzardo sonriendo con los brazos cruzados","alt_emilio":"El Dr. Emilio Rodríguez sonriendo con los brazos cruzados","alt_team":"El equipo de My Tamarac Dentist en la recepción del consultorio","stats_aria":"Datos del consultorio","stat_rating":"en Google Maps","stat_reviews":"reseñas en Google","stat_treat":"tratamientos","stat_days":"días a la semana","svc_kicker":"Tratamientos","svc_title":"Todos los tratamientos, en un solo consultorio.","doc_title":"Conozca a sus doctores.","flor_role":"Odontóloga","flor_bio":"Quiere que cada visita se sienta como un respiro de aire fresco. Se graduó summa cum laude, tiene una maestría en ortopedia y un fellowship en implantología.","emilio_role":"Odontólogo, prostodoncista","emilio_bio":"Cum laude, maestría en Prostodoncia y profesor. Nació y creció en República Dominicana. Habla inglés, portugués y español.","team_title":"Un equipo que le da la bienvenida.","staff_title":"Las personas detrás de su cita","prev":"Anterior","next":"Siguiente","staff_aria":"Equipo, deslice para ver más","rev_kicker":"Reseñas en Google","rev_title":"Lo que dicen sus pacientes.","rev_aria":"Reseñas, deslice para ver más","rev_more":"Ver las 2.319 reseñas en Google","rev_g_en":"Google, reseña original en inglés","rev_g_es":"Google","xp_title":"Su cita, a su manera.","xp_a_h":"Su serie, película o juego durante la cita","xp_a_p":"Pantallas en el techo y audífonos inalámbricos para que se relaje mientras cuidamos su sonrisa.","xp_b_h":"Le explicamos cada paso","xp_b_p":"Nos tomamos el tiempo de explicar y personalizar cada plan de tratamiento.","xp_c_h":"Tecnología de diagnóstico","xp_c_p":"Usamos herramientas de diagnóstico avanzadas y láseres dentales.","faq_title":"Preguntas frecuentes.","visit_kicker":"Visítenos","visit_title":"Estamos en Tamarac.","hours_title":"Horario","directions":"Cómo llegar","map_title":"Mapa de My Tamarac Dentist","areas_h":"También atendemos a pacientes de","cta_title":"Pida su cita.","cta_sub":"Déjenos sus datos y lo contactamos para confirmar. También puede llamarnos.","f_name":"Nombre","f_phone":"Teléfono","f_reason":"Motivo de la cita","f_day":"Día preferido","f_err":"Complete este campo.","f_send":"Enviar solicitud","ok_h":"Todo listo.","ok_p":"Abrimos su correo con el mensaje armado. Envíelo y lo contactamos para confirmar.","ok_again":"Cargar otra solicitud","foot_blurb":"Odontología general y estética en Tamarac, FL.","foot_contact":"Contacto","foot_nav":"Navegar","copyright":"© 2026 My Tamarac Dentist. Todos los derechos reservados.","meta":"Odontología general y estética en Tamarac, FL con la Dra. Flor Luzardo y su equipo. En inglés y español.","closed":"Cerrado","today":"hoy","tomorrow":"mañana","d_mon":"Lunes","d_tue":"Martes","d_wed":"Miércoles","d_thu":"Jueves","d_fri":"Viernes","d_sat":"Sábado","d_sun":"Domingo","open_now":"Abierto ahora, cierra a las {t}","closed_next":"Cerrado, abre {d} a las {t}","mail_subject":"Solicitud de cita","mail_body":"Hola, quisiera pedir una cita.\n\nNombre: {name}\nTeléfono: {phone}\nMotivo: {reason}\nDía preferido: {day}\n\nGracias.","s_cosmetic":"Odontología estética","d_cosmetic":"Tratamientos para mejorar el aspecto de su sonrisa.","s_implants":"Implantes dentales","d_implants":"Una solución para reemplazar dientes ausentes. Llámenos para conversar su caso.","s_cleanings":"Limpiezas y chequeos","d_cleanings":"Prevención y revisión periódica de dientes y encías.","s_deep":"Limpieza profunda","d_deep":"Limpieza más a fondo para cuidar la salud de sus encías.","s_aligners":"Alineadores transparentes","d_aligners":"Alineación dental con alineadores discretos.","s_fillings":"Empastes","d_fillings":"Reparación de dientes dañados por caries.","s_whitening":"Blanqueamiento dental","d_whitening":"Tratamiento para aclarar el color de sus dientes.","s_veneers":"Carillas","d_veneers":"Carillas de porcelana para cambiar el aspecto de sus dientes.","s_allon4":"All-on-4","d_allon4":"Restauración de una arcada completa sobre cuatro implantes.","s_root":"Endodoncia","d_root":"Tratamiento para aliviar el dolor y conservar su diente natural.","s_wisdom":"Muelas del juicio","d_wisdom":"Extracción planificada de las muelas del juicio.","s_crowns":"Coronas dentales","d_crowns":"Coronas a medida para restaurar un diente dañado.","s_jaw":"Ortopedia funcional de maxilares","d_jaw":"Un enfoque funcional para la posición y el desarrollo de los maxilares.","s_emergency":"Emergencias dentales","d_emergency":"Atención para urgencias dentales. Llámenos.","r_captain":"Captain","r_operations_manager":"Gerente de operaciones","r_assistant_manager":"Gerente asistente","r_front_desk_manager":"Gerente de recepción","r_front_desk_concierge":"Concierge de recepción","r_hygienist":"Higienista","r_lead_assistant":"Asistente principal","r_assistant":"Asistente","r_dental_assistant":"Asistente dental","q0":"¿Atienden emergencias dentales?","a0":"Sí, ofrecemos odontología de emergencia. Llámenos al (954) 724-8486.","q1":"¿Aceptan mi seguro dental?","a1":"Llámenos al (954) 724-8486 y le confirmamos.","q2":"¿Cuánto cuesta un tratamiento y hay opciones de pago?","a2":"Depende de cada caso. Llámenos al (954) 724-8486 y le confirmamos precios y opciones de pago.","q3":"¿Atienden en español?","a3":"Sí, atendemos en inglés y español. El Dr. Emilio Rodríguez también habla portugués.","q4":"¿Qué pasa en mi primera cita?","a4":"Le explicamos cada paso y personalizamos su plan de tratamiento. Durante la cita puede ver su serie, película o juego en las pantallas del techo.","q5":"¿Cuál es el horario?","a5":"De lunes a viernes de 8:30 a. m. a 5:00 p. m. (los martes hasta las 6:00 p. m.) y los sábados de 8:30 a. m. a 1:00 p. m. Los domingos estamos cerrados.","r_other":"Otro motivo","day_any":"Cualquier día"}};
+var HOURS={mon:[510,1020],tue:[510,1080],wed:[510,1020],thu:[510,1020],fri:[510,1020],sat:[510,780],sun:null};
+var DAYS=["sun","mon","tue","wed","thu","fri","sat"];
+var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var fine=matchMedia("(hover: hover) and (pointer: fine)").matches;
+var lang="es";
+try{var sv=localStorage.getItem("td-lang");if(sv==="en"||sv==="es")lang=sv}catch(e){}
+function safe(f,n){try{f()}catch(e){console.warn("["+n+"]",e)}}
+function tr(k,v){var s=(T[lang]&&T[lang][k])||T.es[k]||k;if(v)for(var n in v)s=s.split("{"+n+"}").join(v[n]);return s}
+function num(n,d){var s=n.toFixed(d);if(lang==="es"){var p=s.split(".");p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,".");return p.join(",")}var q=s.split(".");q[0]=q[0].replace(/\B(?=(\d{3})+(?!\d))/g,",");return q.join(".")}
+function fmtTime(m){var h=Math.floor(m/60),mi=m%60,ap=h>=12?(lang==="es"?"p. m.":"PM"):(lang==="es"?"a. m.":"AM");h=h%12||12;return h+":"+(mi<10?"0":"")+mi+" "+ap}
+function nyNow(){var f=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());var o={};f.forEach(function(p){o[p.type]=p.value});var wd=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday);var h=parseInt(o.hour,10)%24;return{d:wd,m:h*60+parseInt(o.minute,10)}}
+
+function renderHours(){
+  var now=nyNow(),order=["mon","tue","wed","thu","fri","sat","sun"],today=DAYS[now.d];
+  var dl=$("#hoursList"),fh=$("#footHours");if(!dl)return;
+  dl.innerHTML="";fh.innerHTML="";
+  order.forEach(function(k){var h=HOURS[k],txt=h?fmtTime(h[0])+" - "+fmtTime(h[1]):tr("closed");
+    var r=document.createElement("div");r.className="r"+(k===today?" today":"");r.innerHTML="<dt>"+tr("d_"+k)+"</dt><dd>"+txt+"</dd>";dl.appendChild(r);
+    var li=document.createElement("li");li.textContent=tr("d_"+k)+": "+txt;fh.appendChild(li)});
+  var cur=HOURS[today],open=cur&&now.m>=cur[0]&&now.m<cur[1],msg;
+  if(open){msg=tr("open_now",{t:fmtTime(cur[1])})}
+  else{var idx=now.d,add=0,nd=null;
+    if(cur&&now.m<cur[0]){nd=today;add=0}
+    else{for(var i=1;i<=7;i++){var k2=DAYS[(now.d+i)%7];if(HOURS[k2]){nd=k2;add=i;break}}}
+    msg=tr("closed_next",{d:add===0?tr("today"):(add===1?tr("tomorrow"):tr("d_"+nd)),t:fmtTime(HOURS[nd][0])})}
+  var chip=$("#openChip");chip.hidden=false;chip.classList.toggle("closed",!open);$("#openTxt").textContent=msg;$("#openTxt2").textContent=msg;
+}
+
+function applyLang(l){
+  lang=l;document.documentElement.lang=l;document.documentElement.setAttribute("data-lang",l);
+  try{localStorage.setItem("td-lang",l)}catch(e){}
+  $$("[data-t]").forEach(function(el){el.textContent=tr(el.getAttribute("data-t"))});
+  $$("[data-t-html]").forEach(function(el){el.innerHTML=tr(el.getAttribute("data-t-html"))});
+  $$("[data-t-alt]").forEach(function(el){el.setAttribute("alt",tr(el.getAttribute("data-t-alt")))});
+  $$("[data-t-aria]").forEach(function(el){el.setAttribute("aria-label",tr(el.getAttribute("data-t-aria")))});
+  $$("[data-t-title]").forEach(function(el){el.setAttribute("title",tr(el.getAttribute("data-t-title")))});
+  $$("[data-t-opt]").forEach(function(el){el.textContent=tr(el.getAttribute("data-t-opt"))});
+  var md=$('meta[name="description"]');if(md)md.setAttribute("content",tr("meta"));
+  $$(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===l?"true":"false")});
+  $$("[data-count-to]").forEach(function(el){el.textContent=num(parseFloat(el.dataset.countTo),parseInt(el.dataset.decimals||"0",10))});
+  var first=$("#hero_h1b");renderHours();
+}
+
+function initNav(){
+  var nav=$("#nav"),cta=$("#navCta");
+  var mq=matchMedia("(min-width:900px)");
+  function setCta(){cta.style.display=mq.matches?"inline-flex":"none"}setCta();mq.addEventListener&&mq.addEventListener("change",setCta);
+  var on=function(){nav.classList.toggle("scrolled",window.scrollY>24)};on();window.addEventListener("scroll",on,{passive:true});
+  var b=$("#burger"),m=$("#menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")});
+  m.addEventListener("click",function(e){if(e.target.closest("a")){m.classList.remove("open");b.setAttribute("aria-expanded","false")}});
+  $$(".lang button").forEach(function(btn){btn.addEventListener("click",function(){applyLang(btn.getAttribute("data-lang"))})});
+}
+function initReveal(){
+  var els=$$(".reveal,#teamPhoto");
+  if(!("IntersectionObserver" in window)||reduced){els.forEach(function(e){e.classList.add("in")});return}
+  var io=new IntersectionObserver(function(en,o){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}})},{threshold:.05,rootMargin:"0px 0px -6% 0px"});
+  els.forEach(function(e){io.observe(e)});
+  setTimeout(function(){els.forEach(function(e){e.classList.add("in")})},3200);
+}
+function initCounts(){
+  var els=$$("[data-count-to]");
+  function run(el){var t=parseFloat(el.dataset.countTo),d=parseInt(el.dataset.decimals||"0",10);el.dataset.done="1";
+    if(reduced){el.textContent=num(t,d);return}
+    var st=performance.now(),dur=1300;(function tick(n){var p=Math.min(1,(n-st)/dur),e=1-Math.pow(1-p,3);el.textContent=num(t*e,d);if(p<1)requestAnimationFrame(tick);else el.textContent=num(t,d)})(st)}
+  if(!("IntersectionObserver" in window)){els.forEach(run);return}
+  var io=new IntersectionObserver(function(en,o){en.forEach(function(x){if(x.isIntersecting){run(x.target);o.unobserve(x.target)}})},{threshold:.5});
+  els.forEach(function(e){io.observe(e)});
+  setTimeout(function(){els.forEach(function(e){if(!e.dataset.done)run(e)})},4500);
+}
+function initFx(){
+  if(!fine||reduced)return;
+  $$(".svc").forEach(function(c){c.addEventListener("mousemove",function(e){var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="perspective(800px) rotateY("+px*6+"deg) rotateX("+(-py*6)+"deg) translateY(-6px)"});c.addEventListener("mouseleave",function(){c.style.transform=""})});
+  $$("[data-magnetic]").forEach(function(b){b.addEventListener("mousemove",function(e){var r=b.getBoundingClientRect();b.style.transform="translate("+(e.clientX-r.left-r.width/2)*.2+"px,"+(e.clientY-r.top-r.height/2)*.25+"px)"});b.addEventListener("mouseleave",function(){b.style.transform=""})});
+  var art=$("#heroArt"),img=art&&$("img",art);if(img){art.addEventListener("mousemove",function(e){var r=art.getBoundingClientRect();img.style.transform="translate("+((e.clientX-r.left)/r.width-.5)*10+"px,"+((e.clientY-r.top)/r.height-.5)*6+"px)"});art.addEventListener("mouseleave",function(){img.style.transform=""})}
+}
+function carousel(trackSel,prev,next,step){
+  var t=$(trackSel),p=$(prev),n=$(next);if(!t)return;
+  function upd(){p.disabled=t.scrollLeft<4;n.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4}
+  function go(d){var c=t.firstElementChild;var w=c?c.getBoundingClientRect().width+14:300;t.scrollBy({left:d*w*(step||1),behavior:reduced?"auto":"smooth"})}
+  p.addEventListener("click",function(){go(-1)});n.addEventListener("click",function(){go(1)});
+  t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize",upd);upd();
+  t.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){go(1);e.preventDefault()}if(e.key==="ArrowLeft"){go(-1);e.preventDefault()}});
+  if(fine){var down=false,sx=0,sl=0,moved=false;
+    t.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse")return;down=true;moved=false;sx=e.clientX;sl=t.scrollLeft});
+    window.addEventListener("pointermove",function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>4){moved=true;t.classList.add("drag")}t.scrollLeft=sl-dx});
+    window.addEventListener("pointerup",function(){if(!down)return;down=false;t.classList.remove("drag")})}
+}
+function initFaq(){
+  $$(".qa").forEach(function(q){var b=$("button",q);b.addEventListener("click",function(){var o=q.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})});
+}
+function initForm(){
+  var f=$("#apptForm"),ok=$("#success");if(!f)return;
+  function mark(i,bad){i.closest(".field").classList.toggle("invalid",bad)}
+  f.addEventListener("input",function(e){if(e.target.required)mark(e.target,!e.target.value.trim())});
+  f.addEventListener("submit",function(e){e.preventDefault();var bad=null;
+    $$("[required]",f).forEach(function(i){var b=!i.value.trim();mark(i,b);if(b&&!bad)bad=i});
+    if(bad){bad.focus();return}
+    var name=$("#f-name").value.trim(),ph=$("#f-phone").value.trim(),rs=$("#f-reason"),dy=$("#f-day");
+    var reason=rs.options[rs.selectedIndex].textContent,day=dy.options[dy.selectedIndex].textContent;
+    var body=tr("mail_body",{name:name,phone:ph,reason:reason,day:day});
+    var href="mailto:frontdesk@mytamaracdentist.com?subject="+encodeURIComponent(tr("mail_subject"))+"&body="+encodeURIComponent(body);
+    ok.classList.add("show");setTimeout(function(){window.location.href=href},900)});
+  $("#again").addEventListener("click",function(){ok.classList.remove("show");f.reset();$$(".field.invalid",f).forEach(function(x){x.classList.remove("invalid")});$("#f-name").focus()});
+}
+function boot(){
+  var sp=$("#splash"),hide=function(){sp.classList.add("hide")};
+  if(document.readyState==="complete")setTimeout(hide,reduced?0:650);else window.addEventListener("load",function(){setTimeout(hide,reduced?0:650)});
+  setTimeout(hide,2200);
+  safe(function(){applyLang(lang)},"lang");
+  safe(initNav,"nav");safe(initReveal,"reveal");safe(initCounts,"counts");safe(initFx,"fx");safe(initFaq,"faq");safe(initForm,"form");
+  safe(function(){carousel("#staff","#stPrev","#stNext",2)},"staff");safe(function(){carousel("#revTrack","#rvPrev","#rvNext",1)},"reviews");
+  setInterval(function(){safe(renderHours,"hours")},60000);
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot();
+})();
+</script>
+</body>
+</html>
